@@ -1,0 +1,14 @@
+{
+  "name": "2-SlitScan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Feldstein <msfeldstein@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "raf-loop": "^1.1.3"
+  }
+}
