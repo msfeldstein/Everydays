@@ -1,4 +1,4 @@
-uniform sampler2D tInput;
+uniform sampler2D tDiffuse;
 uniform vec2 center;
 uniform float strength;
 uniform vec2 resolution;
@@ -14,7 +14,7 @@ void main(){
 	for(float t=0.0;t<=40.0;t++){
 		float percent=(t+offset)/40.0;
 		float weight=4.0*(percent-percent*percent);
-		vec4 sample=texture2D(tInput,vUv+toCenter*percent*strength/resolution);
+		vec4 sample=texture2D(tDiffuse,vUv+toCenter*percent*strength/resolution);
 		sample.rgb*=sample.a;
 		color+=sample*weight;
 		total+=weight;

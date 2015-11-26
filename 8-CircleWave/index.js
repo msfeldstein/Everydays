@@ -6,21 +6,21 @@ var boilerplate = new Template({
 var THREE = boilerplate.THREE
 var scene = boilerplate.scene
 var EffectComposer = boilerplate.EffectComposer
-require('./shaders')(THREE)
-
-var effect = new EffectComposer.ShaderPass( THREE.ZoomBlurShader );
-effect.uniforms[ 'resolution' ].value.set(window.innerWidth, window.innerHeight);
-effect.uniforms[ 'center' ].value.set(window.innerWidth / 2, window.innerHeight / 2);
-effect.uniforms[ 'strength' ].value = 0.2
-
-boilerplate.addPostFX( effect );
-
-
+var fs = require('fs')
+var zoomBlurShader = fs.readFileSync('./zoomblur.fs').toString()
 
 var bgColor = "#E0E4CC"
 var color = "#69d2e7"
 
 boilerplate.renderer.setClearColor(bgColor)
+var blur = boilerplate.addPostFX(zoomBlurShader)
+blur.uniforms[ 'resolution' ].value.set(window.innerWidth, window.innerHeight);
+blur.uniforms[ 'strength' ].value = 0.2
+
+document.body.addEventListener('mousemove', function(e) {
+  blur.uniforms[ 'center' ].value.set(window.innerWidth / 2, e.clientY);
+  blur.uniforms[ 'strength' ].value = e.clientX / window.innerWidth
+})
 
 var circles = []
 for (var i = 1; i < 100; i++) {
