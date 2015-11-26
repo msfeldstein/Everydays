@@ -1,5 +1,5 @@
 {
-  "name": "2-SlitScan",
+  "name": "circlewave",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "author": "Michael Feldstein <msfeldstein@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "frameless-connect": "^1.0.3",
-    "raf-loop": "^1.1.3"
+    "@msfeldstein/threejs-template": "^1.0.0",
+    "brfs": "^1.4.1"
   }
 }

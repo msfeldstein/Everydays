@@ -13,6 +13,19 @@ document.body.addEventListener('click', function() {
   GRID_SIZE += 10
 })
 
+var mouseX = 0, mouseY = 0, mouseDown = false
+canvas.addEventListener('mousemove', function(e) {
+  mouseX = e.x
+  mouseY = e.y
+})
+
+canvas.addEventListener('mousedown', function() {
+  mouseDown = true
+})
+canvas.addEventListener('mouseup', function() {
+  mouseDown = false
+})
+
 var Runner = function(initialX, initialY) {
   this.x = initialX
   this.y = initialY
@@ -45,6 +58,10 @@ Runner.prototype.step = function() {
 }
 
 Runner.prototype.draw = function(ctx) {
+  var dx = this.x - mouseX
+  var dy = this.y - mouseY
+  
+  if (mouseDown) ctx.globalAlpha = Math.max(0.2, Math.min(1.0, 1.3 - Math.sqrt(dx * dx + dy * dy) / 300))
   ctx.fillRect(this.x, this.y, 1, 1)
   return this
 }
@@ -55,7 +72,7 @@ for (var i = 0; i < 1000; i++) {
 
 var render = function(dt) {
   ctx.fillStyle = "black"
-  ctx.globalAlpha = 1.0
+  ctx.globalAlpha = 1
   for (var i = 0 ; i < runners.length; i++) {
     runners[i].step().draw(ctx)
   }
