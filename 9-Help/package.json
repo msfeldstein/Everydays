@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "budo --open --live index.js -- -t brfs"
+    "start": "budo --open --live index.js -- -t brfs",
+    "build": "browserify index.js -t brfs > bundle.js"
   },
   "author": "Michael Feldstein <msfeldstein@gmail.com>",
   "license": "ISC",
