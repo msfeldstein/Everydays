@@ -1,0 +1,16 @@
+{
+  "name": "help",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo --open --live index.js -- -t brfs"
+  },
+  "author": "Michael Feldstein <msfeldstein@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@msfeldstein/threejs-template": "^1.2.0",
+    "dat-gui": "^0.5.0"
+  }
+}
