@@ -110,5 +110,8 @@ void main() {
   float n = pnoise_1_4(pos, vec3(10.0,10.0 , 10.0));
   float modulation = max(0.0, r * 8.0 - 0.3);
   n *= modulation;
+  float vignette = r * 2.0 - 0.3;
+  vignette *= vignette * vignette;
+  n = max(vignette, n);
   gl_FragColor = vec4(0.0, 0.0, 0.0, n);
 }
