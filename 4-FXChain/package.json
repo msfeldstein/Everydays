@@ -1,0 +1,16 @@
+{
+  "name": "4-FXChain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Feldstein <msfeldstein@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "brfs": "^1.4.1",
+    "interactive-shader-format": "git://github.com/msfeldstein/ISF-JS-Renderer",
+    "raf-loop": "^1.1.3"
+  }
+}

@@ -1,10 +1,11 @@
+console.log("HELLO")
 var Template = require('@msfeldstein/threejs-template')
 var fs = require('fs')
 var GUI = require('dat-gui').GUI
 var perlin = require('perlin').noise.perlin2
 var whitenoise = require('./whitenoise')
 whitenoise.start()
-
+console.log("HI")
 boilerplate = new Template()
 var THREE = boilerplate.THREE
 var scene = boilerplate.scene
@@ -49,14 +50,18 @@ var loader = new THREE.TextureLoader()
 loader.load("help-white.png", function(texture) {
   var s = width / 20
   var planeGeom = new THREE.PlaneGeometry(s,s )
-  
+
   var material = new THREE.MeshBasicMaterial({map: texture, depthTest: false, transparent: true})
   plane = new THREE.Mesh(planeGeom, material)
   scene.add(plane)
 })
-
+var time = 0
 boilerplate.render(function(t) {
-  shaderMaterial.uniforms.TIME.value = t / 1000.0
+  if (Math.random() > 0.98) {
+    time = Math.random() * 10000
+  }
+  time += 0.01
+  shaderMaterial.uniforms.TIME.value = time
   if (plane) {
     var amount = params.shake * 2 - params.shake
     var x = (Math.random() * 2 - 1) * amount

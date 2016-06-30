@@ -1,0 +1,21 @@
+{
+  "name": "everydays",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Feldstein <msfeldstein@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "npm": "^3.5.2",
+    "prot": "^1.0.3",
+    "three": "^0.76.1",
+    "yargs": "^3.31.0"
+  },
+  "devDependencies": {
+    "brfs": "^1.4.3"
+  }
+}

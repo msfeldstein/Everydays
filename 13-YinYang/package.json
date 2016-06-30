@@ -1,0 +1,21 @@
+{
+  "name": "13-YinYang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "extract-svg-path": "^2.1.0",
+    "load-svg": "^1.0.0",
+    "mesh-reindex": "^1.0.0",
+    "svg-mesh-3d": "^1.0.1",
+    "svg-path-parser": "^1.0.1",
+    "three": "^0.73.0",
+    "three-orbit-controls": "^72.0.0",
+    "three-simplicial-complex": "^69.0.6",
+    "unindex-mesh": "^2.0.0"
+  }
+}

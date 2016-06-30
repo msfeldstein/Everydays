@@ -1,0 +1,17 @@
+{
+  "name": "plexus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@msfeldstein/threejs-template": "^1.2.0",
+    "simplex-noise": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo --open --live index.js -- -t brfs"
+  },
+  "author": "Michael Feldstein <msfeldstein@gmail.com>",
+  "license": "ISC"
+}

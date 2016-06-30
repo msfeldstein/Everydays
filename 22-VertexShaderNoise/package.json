@@ -1,0 +1,30 @@
+{
+  "name": "vtxnoise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify index.js -t glslify > built.js && echo \"<html><head><script src=\\\"./built.js\\\" async> </script></head><body></body></html>\" > index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Feldstein <msfeldstein@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "brfs": "^1.4.3",
+    "glsl-hsv2rgb": "^1.0.0",
+    "glsl-noise": "0.0.0",
+    "glsl-random": "0.0.5",
+    "glslify": "^5.1.0",
+    "three": "^0.78.0",
+    "twgl.js": "^1.7.1"
+  },
+  "devDependencies": {
+    "budo": "^8.3.0",
+    "simple-html-index": "^1.3.0"
+  },
+  "browserify": {
+    "transform": [
+      "glslify"
+    ]
+  }
+}

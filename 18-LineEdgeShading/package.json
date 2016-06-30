@@ -1,0 +1,14 @@
+{
+  "name": "lineedgeshading",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Feldstein <msfeldstein@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "prot": "^1.0.3"
+  }
+}

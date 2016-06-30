@@ -103,7 +103,7 @@ const float PI = 3.1415;
 void main() {
   float x = vUv.x - 0.5;
   float y = vUv.y - 0.5;
-  
+
   float r = sqrt(x * x + y * y);
   float theta = (atan(y,x) + PI) / PI * 10.0 + r * 3.0;
   vec3 pos = vec3(r + TIME, theta, TIME * 0.1);
@@ -113,5 +113,7 @@ void main() {
   float vignette = r * 2.0 - 0.3;
   vignette *= vignette * vignette;
   n = max(vignette, n);
+  float statics = pnoise_1_4(vec3(x,y,TIME), vec3(100000.0));
+  n += statics / 1.0;
   gl_FragColor = vec4(0.0, 0.0, 0.0, n);
 }
