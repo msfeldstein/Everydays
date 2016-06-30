@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "budo index.js -o -l -- -t glslify",
     "build": "browserify index.js -t glslify > built.js && echo \"<html><head><script src=\\\"./built.js\\\" async> </script></head><body></body></html>\" > index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
